@@ -1,10 +1,10 @@
-import { Pizza } from "./Pizza";
+import { Header } from "./Header";
 
 function App() {
   return (
-    <>
-      <Pizza />
-    </>
+    <div className="container">
+      <Header />
+    </div>
   );
 }
 
