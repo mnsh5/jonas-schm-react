@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 
 import { Message } from "./Message";
+import { Button } from "./Button";
 
 function App() {
   const [advice, setAdvice] = useState("");
@@ -20,11 +21,14 @@ function App() {
   }, []);
 
   return (
-    <div>
-      <Message id={advice.id} advice={advice.advice} />
-      <button onClick={getAdvice}>Obtener nuevo consejo</button>
+    <div className="bg-dark-blue-500 min-h-screen flex items-center justify-center">
+      <div className="flex flex-col items-center justify-center">
+        <Message id={advice.id} advice={advice.advice} />
+        <Button getAdvice={getAdvice} />
+      </div>
     </div>
   );
 }
 
 export default App;
+
