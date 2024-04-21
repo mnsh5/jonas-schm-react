@@ -1,16 +1,18 @@
-export function Skill({
-  skill,
-  emoji,
-  color,
-}: {
-  skill: string;
-  emoji: string;
-  color: string;
-}) {
+import { SkillType } from "./skills";
+
+export function Skill({ data }: { data: SkillType[] }) {
   return (
-    <div className="skill" style={{ backgroundColor: color }}>
-      <span>{skill}</span>
-      <span>{emoji}</span>
-    </div>
+    <>
+      {data.map((skill) => (
+        <div
+          className="skill"
+          style={{ backgroundColor: skill.color }}
+          key={skill.id}
+        >
+          <span>{skill.skill}</span>
+          <span>{skill.emoji}</span>
+        </div>
+      ))}
+    </>
   );
 }
