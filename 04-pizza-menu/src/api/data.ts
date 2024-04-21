@@ -1,6 +1,6 @@
-import { Pizza } from "./types";
+import { PizzaType } from "./types";
 
-export const data: Pizza[] = [
+export const data: PizzaType[] = [
   {
     id: 1,
     name: "Focaccia",

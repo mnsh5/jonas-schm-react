@@ -1,12 +1,6 @@
-type Pizza = {
-  name: string;
-  ingredients: string;
-  price: number;
-  photoName: string;
-  soldOut: boolean;
-};
+import { PizzaType } from "../api/types";
 
-export function Pizza({ data }: { data: Pizza[] }) {
+export function Pizza({ data }: { data: PizzaType[] }) {
   return (
     <>
       {data.map((pizza, index) => (
