@@ -1,21 +1,25 @@
 import { Item } from "./Item";
 
-import { initialItems } from "../items";
+import { InitialItemType } from "../items";
 
-export function PackingList() {
+interface Props {
+  items: InitialItemType[];
+}
+
+export function PackingList({ items }: Props) {
   function onToggleItem() {}
   function onDeleteItem() {}
 
   return (
     <div className="list">
       <ul>
-        {initialItems.map(({ id, description, quantity, packed }) => (
+        {items.map((item) => (
           <Item
-            key={id}
-            id={id}
-            description={description}
-            quantity={quantity}
-            packed={packed}
+            key={item.id}
+            id={item.id}
+            description={item.description}
+            quantity={item.quantity}
+            packed={item.packed}
             onToggleItem={onToggleItem}
             onDeleteItem={onDeleteItem}
           />
