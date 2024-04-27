@@ -1,16 +1,13 @@
 import { ReactNode } from "react";
 
-export function Button({
-  textColor,
-  bgColor,
-  onClick,
-  children,
-}: {
+type Props = {
   textColor: string;
   bgColor: string;
   onClick: () => void;
   children: ReactNode;
-}) {
+};
+
+export function Button({ textColor, bgColor, onClick, children }: Props) {
   return (
     <button
       style={{ backgroundColor: bgColor, color: textColor }}

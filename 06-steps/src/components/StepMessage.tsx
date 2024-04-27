@@ -1,12 +1,11 @@
 import { ReactNode } from "react";
 
-export function StepMessage({
-  step,
-  children,
-}: {
+type Props = {
   step: number;
   children: ReactNode;
-}) {
+};
+
+export function StepMessage({ step, children }: Props) {
   return (
     <div className="message">
       <h3>Step {step}</h3>
