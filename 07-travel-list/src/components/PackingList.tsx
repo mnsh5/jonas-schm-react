@@ -1,7 +1,26 @@
+import { Item } from "./Item";
+
+import { initialItems } from "../items";
+
 export function PackingList() {
+  function onToggleItem() {}
+  function onDeleteItem() {}
+
   return (
     <div className="list">
-      <ul></ul>
+      <ul>
+        {initialItems.map(({ id, description, quantity, packed }) => (
+          <Item
+            key={id}
+            id={id}
+            description={description}
+            quantity={quantity}
+            packed={packed}
+            onToggleItem={onToggleItem}
+            onDeleteItem={onDeleteItem}
+          />
+        ))}
+      </ul>
 
       <div className="actions">
         <select>
